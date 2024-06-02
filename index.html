@@ -1,0 +1,362 @@
+﻿<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>CheckList-Functional Test</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="icon" type="image/x-icon" href="logo.png">
+
+    <style type="text/css">
+
+
+.cl {
+  float: right;
+  padding: 15px; 
+}
+
+.cl2 {
+  float: right;
+  padding: 40px; 
+}
+
+
+
+
+      /* Basic styling for root. */
+      #root {
+        width: 500px;
+        height: 700px;
+        background-color: yellow;
+      }
+
+	  
+	  table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+	  td, th {
+  border: 1px solid #dddddd;
+  text-align: center;
+  padding: 10px;
+}
+
+
+button:focus {
+    outline: none;
+    border: 3px solid black;
+}
+#q1button:focus {
+    background-color: green;
+    color: pink;
+}
+
+.button {
+  background-color: rgb(36, 36, 36);
+  border: none;
+  color: white;
+  padding: 5px 9px;
+  text-align: center;
+  
+  text-decoration: none;
+  display: inline-block;
+  font-size: 25px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+button {
+  background-color: rgb(126, 124, 124);
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.buttonvis {
+  background-color: white;
+  color: black;
+  border: 1px solid #555555;
+  font-size: 17px;
+}
+
+.buttonvis:hover {
+  background-color: #555555;
+  color: white;
+}
+
+input[name=usrname] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 4px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+table td,tr {
+    border-top: thin solid; 
+    border-bottom: thin solid;
+}
+
+
+
+/* Center the loader */
+#loader {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+  width: 120px;
+  height: 120px;
+  margin: -76px 0 0 -76px;
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid rgb(85, 85, 85);
+  border-top: 16px solid rgb(0, 0, 0);
+  border-right: 16px solid rgb(172, 172, 172);
+  border-bottom: 16px solid rgb(0, 0, 0);
+  border-left: 16px solid rgb(191, 191, 191);
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Add animation to "page content" */
+.animate-bottom {
+  position: relative;
+  -webkit-animation-name: animatebottom;
+  -webkit-animation-duration: 1s;
+  animation-name: animatebottom;
+  animation-duration: 1s
+}
+
+
+@-webkit-keyframes animatebottom {
+  from { bottom:-100px; opacity:0 } 
+  to { bottom:0px; opacity:1 }
+}
+
+@keyframes animatebottom { 
+  from{ bottom:-100px; opacity:0 } 
+  to{ bottom:0; opacity:1 }
+}
+
+#myDiv {
+  display: none;
+  text-align: center;
+}
+
+
+
+    </style>
+  </head>
+
+  <body onload="myFunction()" style="margin:0;">
+
+    <!-- Div to capture. -->
+	<div id="loader"></div>
+	<h2 class="cl"><a href="TestMethodsGame.html"  target="blank">TEST METHOD</a></h2>
+	<h2 class="cl2"><a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vTv81jO10P243cvdxmW0ShG-SN78LspPzNh18wHSOGGP2BjPtpHh3DiXNFrW957CufUZqyi08LRSDKv/pubhtml"  target="blank">MAPPING TMG</a></h2>
+	<h2 class="cl"><a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vRYVfnbqtoilSfiajsd2yQ17V-AULBRIs4Q3jgLda5hQgt0H1uvYUoEFxvd97MvD8zDXLs8gWzsCx43/pubhtml"  target="blank">CERT_MATRIX</a></h2>
+	
+	<div id="chlist" style="display:none;" >
+    <div id="root1">
+	
+         <form action="" align="center">
+		  <fieldset>
+        <legend><b>*Required fields*</legend>
+			<p><span id="datetime"></span></p>
+      *Operator: <input type="text" name="Operator" required><p>
+	 * Link Job Jira: <input type="url" name="jobjira"><p>
+	  *Codice Item: <input type="text" name="coditem"><p>
+	  *Item Name: <input type="text" name="nomitem"><p>
+	 
+	*Jurisdiction:
+      <select id="datalist1">
+	   <option disabled selected value> -- select an option -- </option>
+        <option value="it">IT</option>
+        <option value="mt">MT</option>
+		<option value="uk">UK</option>
+        <option value="on">ON</option>
+		<option value="se">SE</option>
+        <option value="dk">DK</option>
+		<option value="nl">NL</option>
+        <option value="es">ES</option>
+		<option value="pt">PT</option>
+        <option value="co">CO</option>
+		<option value="cz">CZ</option>
+        <option value="ch">CH</option>
+		<option value="lt">LT</option>
+        <option value="lv">LV</option>
+		<option value="ee">EE</option>
+        <option value="hr">HR</option>
+		<option value="bg">BG</option>
+        <option value="by">BY</option>
+		<option value="iom">IOM</option>
+        <option value="gib">GIB</option>
+		<option value="gr">GR</option>
+		<option value="lotba">LOTBA</option>
+        <option value="pa">PA</option>
+		<option value="arm">AR-M</option>
+        <option value="pe">PE</option>
+		<option value=""gli193>GLI - 19 3.0</option>
+		<option value="gli192">GLI - 19 2.0</option>
+      </select><p>
+	  
+		
+		
+		*Item Type: 
+      <select id="datalist2">
+	   <option disabled selected value> -- select an option -- </option>
+        <option value="slot">Slot</option>
+        <option value="EuroRoul">European Roulette</option>
+		<option value="FrenRoul">French Roulette</option>
+        <option value="AmeriRoul">American Roulette</option>
+		<option value="DoubBRoul">Double Ball Roulette</option>
+        <option value="OthRoul">Other Roulette</option>
+		<option value="BlackClass">Blackjack Classic</option>
+        <option value="BlackAmeri">Blackjack American</option>
+		<option value="BlackSurr">Blackjack Surrender</option>
+        <option value="BlackPont">Blackjack Pontoon</option>
+		<option value="BlackSupe">Blackjack Super 21</option>
+        <option value="OthBlack">Other Blackjack</option>
+		<option value="Baccar">Baccarat</option>
+        <option value="OthBaccar">Other Baccarat</option>
+		<option value="DiceCr">Dice Craps</option>
+        <option value="OthCrap">Other Craps</option>
+		<option value="VideoPok">Videopoker</option>
+        <option value="PokeSinPl">Poker Single Player</option>
+		<option value="PokeMultCa">Poker Multi Player Cash</option>
+        <option value="PokeMulPT">Poker Multi Player Tournament</option>
+		<option value="SkilGMPC">Skill Game Multi Player Cash</option>
+		<option value="SkillGMPT">Skill Game Multi Player Tournament</option>
+        <option value="ScratReve">Scratch / Reveal</option>
+		<option value="VirtFoot">Virtual Football</option>
+        <option value="VirtBask">Virtual Basket</option>
+		<option value="VirtTenn">Virtual Tennis</option>
+		<option value="VirtFigh">Virtual Fighting</option>
+		<option value="VirtRacH">Virtual Racing - Horse</option>
+		<option value="VirtRacT">Virtual Racing - Trotting</option>
+		<option value="VirtRacD">Virtual Racing - Dog</option>
+		<option value="VirtRSM">Virtual Racing - SpeedWay - Motorway</option>
+		<option value="VirtRacCy">Virtual Racing - Cycling</option>
+		<option value="VirtOth">Virtual Other</option>
+		<option value="VirtODF">Virtual ON DEMAND Football</option>
+		<option value="VirtODB">Virtual ON DEMAND Basket</option>
+		<option value="VirtODT">Virtual ON DEMAND Tennis</option>
+		<option value="VirtODF">Virtual ON DEMAND Fighting</option>
+		<option value="VirtRacOD">Virtual Racing ON DEMAND - Horse</option>
+		<option value="VirtRacODT">Virtual Racing ON DEMAND - Trotting</option>
+		<option value="VirtRacODG">Virtual Racing ON DEMAND - Dog</option>
+		<option value="VirtRacODSM">Virtual Racing ON DEMAND - Speedway - Motorway</option>
+		<option value="VirtRacODC">Virtual Racing ON DEMAND - Cycling</option>
+		<option value="VirtODoth">Virtual on demand Other</option>
+		<option value="SporBett">Sport Betting</option>
+		<option value="FantSporC">Fanstasy Sport Cash</option>
+		<option value="FantSporTou">Fanstasy Sport Tournament</option>
+		<option value="Ken">Keno</option>
+		<option value="BingMult">Bingo Multiplayer</option>
+		<option value="Lott">Lottery</option>
+		<option value="MinGam">Mine Games</option>
+		<option value="CrasGame">Crash Games</option>
+		<option value="OCGSP">OTHER CARD GAMES SINGLE PLAYER</option>
+		<option value="OCGM">OTHER CARD GAMES MULTIPLAYER</option>
+		<option value="OGSP">OTHER GAMES SINGLE PLAYER</option>
+		<option value="OGM">OTHER GAMES MULTIPLAYER</option>
+      </select><p>
+		
+			<input type=button class="buttonvis" value="Visualizza lista test da fare" onclick="optionClicked()" />
+	  
+	  </fieldset>
+    </form>
+    </div>
+
+
+ <!-- Div to capture. -->
+    <div id="root1">
+			<h2 align="center" id="waiting"><b>Selezionare Jurisdiction e Item type per proccedere...</b></h2>
+         <form action="">
+		  <fieldset>
+        <legend></legend>
+		<div id="div"></div>
+	  </fieldset>
+		</form>
+		</div>
+
+
+	
+	<!-- Button used to generate PDF. -->
+	<div style="text-align:center">  
+    <button onclick="test()" class="button">SALVA CHECKLIST</button>
+</div> 
+</div>
+</div>
+
+
+
+
+		<!-- CL SCRIPTS. -->
+		<script src="options.js"></script>
+		<script src="Changebuttcol.js"></script>
+	
+		<!-- CURRENT DATE/TIME SCRIPTS. -->
+		<script>
+			var dt = new Date();
+			document.getElementById("datetime").innerHTML = dt.toLocaleString();
+			</script>
+
+<script>
+	window.addEventListener( 'beforeunload', function(ev) { 
+    return ev.returnValue = 'My reason';
+})
+
+</script>
+	
+	
+	<!-- LOADER SCRIPTS. -->
+	<script>
+		var myVar;
+		
+		function myFunction() {
+		  myVar = setTimeout(showPage, 2000);
+		}
+		
+		function showPage() {
+		  document.getElementById("loader").style.display = "none";
+		  document.getElementById("chlist").style.display = "block";
+		}
+		</script>
+    <!-- Include html2pdf bundle. -->
+    <script src="dist/html2pdf.bundle.js"></script>
+    <script>
+      function test() {
+        // Get the element.
+        var element = document.getElementById('chlist');
+        // Generate the PDF.
+        html2pdf().from(element).set({
+          margin: 1,
+          filename: 'TM CL_.pdf',
+          html2canvas: { scale: 1 },
+          jsPDF: {orientation: 'portrait', unit: 'in', format: 'letter', compressPDF: true}
+        }).save();
+      }
+    </script>
+  </body>
+</html>

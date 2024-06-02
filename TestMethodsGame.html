@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="icon" type="image/x-icon" href="favicon2.ico">
+    <style>
+      html, body {
+        height: 100%;
+      }
+      #iframe {
+        position: relative;
+        width: 100%;
+        height: 100%;
+      }
+    </style>
+  </head>
+
+  <body>
+
+    <p>
+      <b>CERCA ID TEST:</b> <input type="search" id="selector" placeholder="TG1...">
+      <input type="button" value="Search" id="mySearch"> O
+      <b>CTRL + F</b>
+
+    </p>
+
+
+    <iframe id="iframe" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxdtgCAXMcf2OVgCd3hEOofscJW4YvD5Lew5yTgX8O6O37xWkzTGTvwl3Tn7XjkNiVZVn0hqcXYMRx/pubhtml?widget=true&amp;headers=false"></iframe>
+
+    <script>
+      var html2pdf;
+      var _window;
+      var popup;
+      var target = document.getElementById('target');
+      var iframe = document.getElementById('iframe');
+      var ready = document.getElementById('ready');
+      var selector = document.getElementById('selector');
+
+      function loadIframe () {
+        ready.innerHTML = '';
+        iframe.onload = function () { _window = iframe.contentWindow; testLoaded(); };
+        iframe.src = target.value;
+      }
+
+
+
+
+
+
+    </script>
+  </body>
+</html>
