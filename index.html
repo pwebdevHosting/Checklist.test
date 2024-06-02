@@ -101,6 +101,8 @@ input[name=usrname] {
   box-sizing: border-box;
 }
 
+
+
 table td,tr {
     border-top: thin solid; 
     border-bottom: thin solid;
@@ -163,6 +165,12 @@ table td,tr {
   text-align: center;
 }
 
+.align-center {
+    display: block;
+    margin: 1.0em auto;
+    text-align: center;
+}
+
 
 
     </style>
@@ -179,14 +187,14 @@ table td,tr {
 	<div id="chlist" style="display:none;" >
     <div id="root1">
 	
-         <form action="" align="center">
-		  <fieldset>
+         <form action="">
+		  <fieldset class="align-center">
         <legend><b>*Required fields*</legend>
 			<p><span id="datetime"></span></p>
-      *Operator: <input type="text" name="Operator" required><p>
-	 * Link Job Jira: <input type="url" name="jobjira"><p>
-	  *Codice Item: <input type="text" name="coditem"><p>
-	  *Item Name: <input type="text" name="nomitem"><p>
+      *Operator: <input type="text" name="Operator" style="width: 35%"><p>
+	 * Link Job Jira: <input type="text" name="jobjira" style="width: 35%"><p>
+	  *Codice Item: <input type="text" name="coditem"style="width: 10%"><p>
+	  *Item Name: <input type="text" name="nomitem" style="width: 40%"><p>
 	 
 	*Jurisdiction:
       <select id="datalist1">
